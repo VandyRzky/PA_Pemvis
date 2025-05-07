@@ -26,6 +26,7 @@ Partial Class Home
         SewaKameraToolStripMenuItem = New ToolStripMenuItem()
         DataTransaksiToolStripMenuItem = New ToolStripMenuItem()
         LogOutToolStripMenuItem = New ToolStripMenuItem()
+        PanelKonten = New Panel()
         MenuStrip1.SuspendLayout()
         SuspendLayout()
         ' 
@@ -35,7 +36,7 @@ Partial Class Home
         MenuStrip1.Items.AddRange(New ToolStripItem() {SewaKameraToolStripMenuItem, DataTransaksiToolStripMenuItem, LogOutToolStripMenuItem})
         MenuStrip1.Location = New Point(0, 0)
         MenuStrip1.Name = "MenuStrip1"
-        MenuStrip1.Size = New Size(800, 28)
+        MenuStrip1.Size = New Size(811, 28)
         MenuStrip1.TabIndex = 0
         MenuStrip1.Text = "MenuStrip1"
         ' 
@@ -57,11 +58,19 @@ Partial Class Home
         LogOutToolStripMenuItem.Size = New Size(76, 24)
         LogOutToolStripMenuItem.Text = "Log Out"
         ' 
+        ' PanelKonten
+        ' 
+        PanelKonten.Location = New Point(0, 31)
+        PanelKonten.Name = "PanelKonten"
+        PanelKonten.Size = New Size(811, 438)
+        PanelKonten.TabIndex = 1
+        ' 
         ' Home
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(800, 450)
+        ClientSize = New Size(811, 466)
+        Controls.Add(PanelKonten)
         Controls.Add(MenuStrip1)
         MainMenuStrip = MenuStrip1
         Name = "Home"
@@ -76,4 +85,5 @@ Partial Class Home
     Friend WithEvents SewaKameraToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents DataTransaksiToolStripMenuItem As ToolStripMenuItem
     Friend WithEvents LogOutToolStripMenuItem As ToolStripMenuItem
+    Friend WithEvents PanelKonten As Panel
 End Class

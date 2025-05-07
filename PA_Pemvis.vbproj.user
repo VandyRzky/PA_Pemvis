@@ -16,5 +16,8 @@
     <Compile Update="Registrasi.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="SewaKameraUser.vb">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

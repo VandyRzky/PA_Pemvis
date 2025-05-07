@@ -22,3 +22,4 @@ D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\ref\PA_Pemvis.dll
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.sourcelink.json
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.MenuAdmin.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.SewaKameraUser.resources
