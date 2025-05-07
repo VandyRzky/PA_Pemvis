@@ -27,7 +27,7 @@ Public Class Form1
             MsgBox("Data belum lengkap")
             txtUsernameLogin.Focus()
         ElseIf loginAdmin Then
-            Dim dashboardAdmin As New HomeAdmin
+            Dim dashboardAdmin As New MenuAdmin
             txtUsernameLogin.Clear()
             txtPasswordLogin.Clear()
             dashboardAdmin.Show()

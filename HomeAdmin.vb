@@ -2,15 +2,11 @@
 Imports MySql.Data.MySqlClient
 
 Public Class HomeAdmin
-    Private Sub Label1_Click(sender As Object, e As EventArgs) Handles Label1.Click
-        Form1.Show()
-        Me.Close()
-    End Sub
-
     Sub Kosong()
         txtKode.Clear()
         txtMerk.Clear()
         txtSeri.Clear()
+        txtHarga.Clear()
         txtKode.Focus()
     End Sub
 
@@ -30,14 +26,17 @@ Public Class HomeAdmin
     End Sub
 
     Sub aturGrid()
-        DataGridView1.Columns(0).Width = 108
-        DataGridView1.Columns(1).Width = 175
-        DataGridView1.Columns(2).Width = 175
-        DataGridView1.Columns(3).Width = 175
+        DataGridView1.Columns(0).Width = 83
+        DataGridView1.Columns(1).Width = 150
+        DataGridView1.Columns(2).Width = 150
+        DataGridView1.Columns(3).Width = 100
+        DataGridView1.Columns(4).Width = 150
         DataGridView1.Columns(0).HeaderText = "Kode Kamera"
         DataGridView1.Columns(1).HeaderText = "Merk Kamera"
         DataGridView1.Columns(2).HeaderText = "Seri Kamera"
-        DataGridView1.Columns(3).HeaderText = "Penyewa"
+        DataGridView1.Columns(3).HeaderText = "Harga"
+        DataGridView1.Columns(4).HeaderText = "Penyewa"
+
     End Sub
 
     Private Sub HomeAdmin_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -50,6 +49,7 @@ Public Class HomeAdmin
         txtKode.MaxLength = 5
         txtMerk.MaxLength = 50
         txtSeri.MaxLength = 50
+        txtHarga.MaxLength = 10
     End Sub
 
     Private Sub DataGridView1_CellClick(sender As Object, e As DataGridViewCellEventArgs) Handles DataGridView1.CellClick
@@ -59,7 +59,8 @@ Public Class HomeAdmin
             txtKode.Text = row.Cells(0).Value.ToString()
             txtMerk.Text = row.Cells(1).Value.ToString()
             txtSeri.Text = row.Cells(2).Value.ToString()
-            txtPenyewa.Text = row.Cells(3).Value.ToString()
+            txtHarga.Text = row.Cells(3).Value.ToString
+            txtPenyewa.Text = row.Cells(4).Value.ToString()
         End If
     End Sub
 
@@ -74,10 +75,11 @@ Public Class HomeAdmin
             RD.Read()
             If Not RD.HasRows Then
                 RD.Close()
-                CMD = New MySqlCommand("INSERT INTO kameras (kodeKamera, merkKamera, seriKamera) VALUES (@kode, @merk, @seri)", CONN)
+                CMD = New MySqlCommand("INSERT INTO kameras (kodeKamera, merkKamera, seriKamera, harga) VALUES (@kode, @merk, @seri, @harga)", CONN)
                 CMD.Parameters.AddWithValue("@kode", txtKode.Text)
                 CMD.Parameters.AddWithValue("@merk", txtMerk.Text)
                 CMD.Parameters.AddWithValue("@seri", txtSeri.Text)
+                CMD.Parameters.AddWithValue("@harga", txtHarga.Text)
                 CMD.ExecuteNonQuery()
                 tampilJenis()
                 Kosong()
@@ -110,10 +112,11 @@ Public Class HomeAdmin
                     Return
                 End If
                 RD.Close()
-                CMD = New MySqlCommand("UPDATE kameras SET merkKamera = @merk, seriKamera = @seri WHERE kodeKamera = @kode", CONN)
+                CMD = New MySqlCommand("UPDATE kameras SET merkKamera = @merk, seriKamera = @seri, harga = @harga WHERE kodeKamera = @kode", CONN)
                 CMD.Parameters.AddWithValue("@kode", txtKode.Text)
                 CMD.Parameters.AddWithValue("@merk", txtMerk.Text)
                 CMD.Parameters.AddWithValue("@seri", txtSeri.Text)
+                CMD.Parameters.AddWithValue("@harga", txtHarga.Text)
                 CMD.ExecuteNonQuery()
                 MsgBox("Data berhasil diubah")
                 tampilJenis()
@@ -151,6 +154,12 @@ Public Class HomeAdmin
                 RD.Close()
                 MsgBox("Data tidak ada")
             End If
+        End If
+    End Sub
+
+    Private Sub txtHarga_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtHarga.KeyPress
+        If Not Char.IsDigit(e.KeyChar) And Not Char.IsControl(e.KeyChar) Then
+            e.Handled = True
         End If
     End Sub
 End Class

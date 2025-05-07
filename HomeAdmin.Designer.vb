@@ -22,7 +22,6 @@ Partial Class HomeAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
-        Label1 = New Label()
         DataGridView1 = New DataGridView()
         Label2 = New Label()
         Label3 = New Label()
@@ -37,22 +36,17 @@ Partial Class HomeAdmin
         btnHapus = New Button()
         btnUbah = New Button()
         btnSimpan = New Button()
+        DateTimePicker1 = New DateTimePicker()
+        txtHarga = New TextBox()
+        Label7 = New Label()
+        Label1 = New Label()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
-        ' 
-        ' Label1
-        ' 
-        Label1.AutoSize = True
-        Label1.Location = New Point(22, 21)
-        Label1.Name = "Label1"
-        Label1.Size = New Size(62, 20)
-        Label1.TabIndex = 0
-        Label1.Text = "Log Out"
         ' 
         ' DataGridView1
         ' 
         DataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize
-        DataGridView1.Location = New Point(31, 293)
+        DataGridView1.Location = New Point(31, 353)
         DataGridView1.Name = "DataGridView1"
         DataGridView1.RowHeadersWidth = 51
         DataGridView1.Size = New Size(686, 188)
@@ -61,7 +55,7 @@ Partial Class HomeAdmin
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(31, 70)
+        Label2.Location = New Point(31, 65)
         Label2.Name = "Label2"
         Label2.Size = New Size(99, 20)
         Label2.TabIndex = 2
@@ -70,7 +64,7 @@ Partial Class HomeAdmin
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(31, 112)
+        Label3.Location = New Point(31, 107)
         Label3.Name = "Label3"
         Label3.Size = New Size(97, 20)
         Label3.TabIndex = 3
@@ -79,7 +73,7 @@ Partial Class HomeAdmin
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(31, 154)
+        Label4.Location = New Point(31, 149)
         Label4.Name = "Label4"
         Label4.Size = New Size(89, 20)
         Label4.TabIndex = 4
@@ -88,7 +82,7 @@ Partial Class HomeAdmin
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(31, 196)
+        Label5.Location = New Point(31, 191)
         Label5.Name = "Label5"
         Label5.Size = New Size(66, 20)
         Label5.TabIndex = 5
@@ -96,35 +90,35 @@ Partial Class HomeAdmin
         ' 
         ' txtKode
         ' 
-        txtKode.Location = New Point(146, 63)
+        txtKode.Location = New Point(146, 58)
         txtKode.Name = "txtKode"
         txtKode.Size = New Size(386, 27)
         txtKode.TabIndex = 6
         ' 
         ' txtMerk
         ' 
-        txtMerk.Location = New Point(146, 105)
+        txtMerk.Location = New Point(146, 100)
         txtMerk.Name = "txtMerk"
         txtMerk.Size = New Size(386, 27)
         txtMerk.TabIndex = 7
         ' 
         ' txtSeri
         ' 
-        txtSeri.Location = New Point(146, 149)
+        txtSeri.Location = New Point(146, 144)
         txtSeri.Name = "txtSeri"
         txtSeri.Size = New Size(386, 27)
         txtSeri.TabIndex = 8
         ' 
         ' txtPenyewa
         ' 
-        txtPenyewa.Location = New Point(146, 190)
+        txtPenyewa.Location = New Point(146, 185)
         txtPenyewa.Name = "txtPenyewa"
         txtPenyewa.Size = New Size(386, 27)
         txtPenyewa.TabIndex = 9
         ' 
         ' txtCari
         ' 
-        txtCari.Location = New Point(146, 244)
+        txtCari.Location = New Point(146, 295)
         txtCari.Name = "txtCari"
         txtCari.Size = New Size(386, 27)
         txtCari.TabIndex = 10
@@ -132,7 +126,7 @@ Partial Class HomeAdmin
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(31, 251)
+        Label6.Location = New Point(31, 302)
         Label6.Name = "Label6"
         Label6.Size = New Size(35, 20)
         Label6.TabIndex = 11
@@ -140,7 +134,7 @@ Partial Class HomeAdmin
         ' 
         ' btnHapus
         ' 
-        btnHapus.Location = New Point(582, 175)
+        btnHapus.Location = New Point(582, 170)
         btnHapus.Name = "btnHapus"
         btnHapus.Size = New Size(135, 29)
         btnHapus.TabIndex = 12
@@ -149,7 +143,7 @@ Partial Class HomeAdmin
         ' 
         ' btnUbah
         ' 
-        btnUbah.Location = New Point(582, 120)
+        btnUbah.Location = New Point(582, 115)
         btnUbah.Name = "btnUbah"
         btnUbah.Size = New Size(135, 29)
         btnUbah.TabIndex = 13
@@ -158,18 +152,55 @@ Partial Class HomeAdmin
         ' 
         ' btnSimpan
         ' 
-        btnSimpan.Location = New Point(582, 66)
+        btnSimpan.Location = New Point(582, 61)
         btnSimpan.Name = "btnSimpan"
         btnSimpan.Size = New Size(135, 29)
         btnSimpan.TabIndex = 14
         btnSimpan.Text = "Simpan"
         btnSimpan.UseVisualStyleBackColor = True
         ' 
+        ' DateTimePicker1
+        ' 
+        DateTimePicker1.Location = New Point(824, 533)
+        DateTimePicker1.Name = "DateTimePicker1"
+        DateTimePicker1.Size = New Size(86, 27)
+        DateTimePicker1.TabIndex = 15
+        ' 
+        ' txtHarga
+        ' 
+        txtHarga.Location = New Point(146, 230)
+        txtHarga.Name = "txtHarga"
+        txtHarga.Size = New Size(386, 27)
+        txtHarga.TabIndex = 17
+        ' 
+        ' Label7
+        ' 
+        Label7.AutoSize = True
+        Label7.Location = New Point(31, 236)
+        Label7.Name = "Label7"
+        Label7.Size = New Size(50, 20)
+        Label7.TabIndex = 16
+        Label7.Text = "Harga"
+        ' 
+        ' Label1
+        ' 
+        Label1.AutoSize = True
+        Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
+        Label1.Location = New Point(299, 9)
+        Label1.Name = "Label1"
+        Label1.Size = New Size(193, 28)
+        Label1.TabIndex = 18
+        Label1.Text = "Manajemen Kamera"
+        ' 
         ' HomeAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(754, 493)
+        ClientSize = New Size(771, 550)
+        Controls.Add(Label1)
+        Controls.Add(txtHarga)
+        Controls.Add(Label7)
+        Controls.Add(DateTimePicker1)
         Controls.Add(btnSimpan)
         Controls.Add(btnUbah)
         Controls.Add(btnHapus)
@@ -184,15 +215,12 @@ Partial Class HomeAdmin
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(DataGridView1)
-        Controls.Add(Label1)
         Name = "HomeAdmin"
         Text = "HomeAdmin"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()
         ResumeLayout(False)
         PerformLayout()
     End Sub
-
-    Friend WithEvents Label1 As Label
     Friend WithEvents DataGridView1 As DataGridView
     Friend WithEvents Label2 As Label
     Friend WithEvents Label3 As Label
@@ -207,4 +235,8 @@ Partial Class HomeAdmin
     Friend WithEvents btnHapus As Button
     Friend WithEvents btnUbah As Button
     Friend WithEvents btnSimpan As Button
+    Friend WithEvents DateTimePicker1 As DateTimePicker
+    Friend WithEvents txtHarga As TextBox
+    Friend WithEvents Label7 As Label
+    Friend WithEvents Label1 As Label
 End Class
