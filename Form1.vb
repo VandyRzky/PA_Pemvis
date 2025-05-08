@@ -33,11 +33,11 @@ Public Class Form1
             dashboardAdmin.Show()
             Hide()
         Else
-            CMD = New MySqlCommand("SELECT * FROM users WHERE username = @username", CONN)
+            CMD = New MySqlCommand("SELECT * FROM users WHERE username = @username AND password = @password", CONN)
             CMD.Parameters.AddWithValue("@username", txtUsernameLogin.Text)
+            CMD.Parameters.AddWithValue("@password", txtPasswordLogin.Text)
             RD = CMD.ExecuteReader
             RD.Read()
-
             If RD.HasRows Then
                 RD.Close()
                 Dim namaUser = txtUsernameLogin.Text
