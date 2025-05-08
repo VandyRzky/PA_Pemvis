@@ -67,4 +67,7 @@ Public Class SewaKameraUser
         End If
     End Sub
 
+    Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
+
+    End Sub
 End Class

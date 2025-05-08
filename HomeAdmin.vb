@@ -162,4 +162,21 @@ Public Class HomeAdmin
             e.Handled = True
         End If
     End Sub
+
+    Private Sub txtCari_KeyPress(sender As Object, e As KeyPressEventArgs) Handles txtCari.KeyPress
+        If e.KeyChar = ChrW(Keys.Enter) Then
+            Dim keyword As String = txtCari.Text.Trim()
+
+            Dim query As String = "SELECT * FROM kameras WHERE (merkKamera LIKE @keyword OR seriKamera LIKE @keyword)"
+            DA = New MySqlDataAdapter(query, CONN)
+
+            DA.SelectCommand.Parameters.AddWithValue("@keyword", "%" & keyword & "%")
+
+            DS = New DataSet
+            DS.Clear()
+            DA.Fill(DS, "kameras")
+            DataGridView1.DataSource = DS.Tables("kameras")
+            aturGrid()
+        End If
+    End Sub
 End Class
