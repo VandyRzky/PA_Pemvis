@@ -10,6 +10,9 @@
     <Compile Update="HomeAdmin.vb">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="InvoiceForm.vb">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="MenuAdmin.vb">
       <SubType>Form</SubType>
     </Compile>

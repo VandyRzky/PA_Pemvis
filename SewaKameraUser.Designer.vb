@@ -164,7 +164,7 @@ Partial Class SewaKameraUser
         ' 
         ' btnSewa
         ' 
-        btnSewa.Location = New Point(39, 466)
+        btnSewa.Location = New Point(624, 466)
         btnSewa.Name = "btnSewa"
         btnSewa.Size = New Size(134, 29)
         btnSewa.TabIndex = 15

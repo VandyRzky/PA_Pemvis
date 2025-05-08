@@ -67,7 +67,44 @@ Public Class SewaKameraUser
         End If
     End Sub
 
-    Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
+    Function cekInput()
+        If txtKode.Text = Nothing Or txtMerk.Text = Nothing Or txtSeri.Text = Nothing Or txtHarga.Text = Nothing Then
+            Return True
+        End If
+        Return False
+    End Function
 
+    Private Sub btnSewa_Click(sender As Object, e As EventArgs) Handles btnSewa.Click
+        If cekInput() Then
+            MsgBox("Pilih kamera dahulu")
+            Return
+        End If
+        Dim kodeKamera As String = txtKode.Text
+        Dim merkKamera As String = txtMerk.Text
+        Dim seriKamera As String = txtSeri.Text
+        Dim hargaKamera As Integer = txtHarga.Text
+
+        Dim tanggalAwal As Date = dtpPinjam.Value.Date
+        Dim tanggalAkhir As Date = dtpKembali.Value.Date
+
+        Dim selisihHari As TimeSpan = tanggalAkhir - tanggalAwal
+        Dim jumlahHari As Integer = selisihHari.Days
+
+        jumlahHari += 1
+
+        If jumlahHari <= 0 Then
+            MsgBox("Tanggal tidak boleh negatif")
+            Return
+        End If
+
+        Dim totalHarga As Integer = jumlahHari * hargaKamera
+
+        Dim konfirmasi As New InvoiceForm(kodeKamera, seriKamera, merkKamera, tanggalAwal, tanggalAkhir, totalHarga)
+
+        'konfirmasi.Show()
+        If konfirmasi.ShowDialog() = DialogResult.OK Then
+            MsgBox("berhasil")
+        End If
     End Sub
+
 End Class
