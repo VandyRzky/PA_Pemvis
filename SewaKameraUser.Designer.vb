@@ -174,6 +174,9 @@ Partial Class SewaKameraUser
         btnSewa.Text = "Sewa Kamera"
         btnSewa.UseVisualStyleBackColor = True
         ' 
+        ' PrintDocument1
+        ' 
+        ' 
         ' PrintPreviewDialog1
         ' 
         PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)

@@ -40,14 +40,13 @@ Public Class SewaKameraUser
         DataGridView1.Columns(0).Width = 83
         DataGridView1.Columns(1).Width = 150
         DataGridView1.Columns(2).Width = 150
-        DataGridView1.Columns(3).Width = 100
+        DataGridView1.Columns(3).Width = 150
         DataGridView1.Columns(4).Width = 150
         DataGridView1.Columns(0).HeaderText = "Kode Kamera"
         DataGridView1.Columns(1).HeaderText = "Merk Kamera"
         DataGridView1.Columns(2).HeaderText = "Seri Kamera"
         DataGridView1.Columns(3).HeaderText = "Harga"
         DataGridView1.Columns(4).HeaderText = "Penyewa"
-
     End Sub
 
     Private Sub SewaKameraUser_Load(sender As Object, e As EventArgs) Handles MyBase.Load
@@ -154,6 +153,5 @@ Public Class SewaKameraUser
         y += 25
         e.Graphics.DrawString("Harga per Hari  : Rp " & totalHarga, fontIsi, brush, 100, y)
     End Sub
-
 
 End Class

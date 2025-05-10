@@ -25,4 +25,9 @@
     Private Sub SewaKameraToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles SewaKameraToolStripMenuItem.Click
         TampilkanFormKePanel(New SewaKameraUser(userLogin))
     End Sub
+
+    Private Sub DataTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataTransaksiToolStripMenuItem.Click
+        TampilkanFormKePanel(New DataTransaksi(userLogin))
+
+    End Sub
 End Class
