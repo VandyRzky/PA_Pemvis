@@ -22,6 +22,7 @@ Partial Class SewaKameraUser
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(SewaKameraUser))
         DataGridView1 = New DataGridView()
         txtKode = New TextBox()
         txtMerk = New TextBox()
@@ -38,6 +39,8 @@ Partial Class SewaKameraUser
         Label7 = New Label()
         txtCari = New TextBox()
         btnSewa = New Button()
+        PrintDocument1 = New Printing.PrintDocument()
+        PrintPreviewDialog1 = New PrintPreviewDialog()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
         SuspendLayout()
         ' 
@@ -171,6 +174,16 @@ Partial Class SewaKameraUser
         btnSewa.Text = "Sewa Kamera"
         btnSewa.UseVisualStyleBackColor = True
         ' 
+        ' PrintPreviewDialog1
+        ' 
+        PrintPreviewDialog1.AutoScrollMargin = New Size(0, 0)
+        PrintPreviewDialog1.AutoScrollMinSize = New Size(0, 0)
+        PrintPreviewDialog1.ClientSize = New Size(400, 300)
+        PrintPreviewDialog1.Enabled = True
+        PrintPreviewDialog1.Icon = CType(resources.GetObject("PrintPreviewDialog1.Icon"), Icon)
+        PrintPreviewDialog1.Name = "PrintPreviewDialog1"
+        PrintPreviewDialog1.Visible = False
+        ' 
         ' SewaKameraUser
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
@@ -215,4 +228,6 @@ Partial Class SewaKameraUser
     Friend WithEvents Label7 As Label
     Friend WithEvents txtCari As TextBox
     Friend WithEvents btnSewa As Button
+    Friend WithEvents PrintDocument1 As Printing.PrintDocument
+    Friend WithEvents PrintPreviewDialog1 As PrintPreviewDialog
 End Class

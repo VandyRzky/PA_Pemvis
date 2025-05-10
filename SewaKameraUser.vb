@@ -3,6 +3,13 @@ Imports MySql.Data.MySqlClient
 
 Public Class SewaKameraUser
     Private userLogin As String
+    Dim kodeKamera As String
+    Dim merkKamera As String
+    Dim seriKamera As String
+    Dim tanggalAwal As Date
+    Dim tanggalAkhir As Date
+    Dim totalHarga As Integer
+
     Public Sub New(nama As String)
         InitializeComponent()
         userLogin = nama
@@ -79,13 +86,13 @@ Public Class SewaKameraUser
             MsgBox("Pilih kamera dahulu")
             Return
         End If
-        Dim kodeKamera As String = txtKode.Text
-        Dim merkKamera As String = txtMerk.Text
-        Dim seriKamera As String = txtSeri.Text
+        kodeKamera = txtKode.Text
+        merkKamera = txtMerk.Text
+        seriKamera = txtSeri.Text
         Dim hargaKamera As Integer = txtHarga.Text
 
-        Dim tanggalAwal As Date = dtpPinjam.Value.Date
-        Dim tanggalAkhir As Date = dtpKembali.Value.Date
+        tanggalAwal = dtpPinjam.Value.Date
+        tanggalAkhir = dtpKembali.Value.Date
 
         Dim selisihHari As TimeSpan = tanggalAkhir - tanggalAwal
         Dim jumlahHari As Integer = selisihHari.Days
@@ -97,14 +104,38 @@ Public Class SewaKameraUser
             Return
         End If
 
-        Dim totalHarga As Integer = jumlahHari * hargaKamera
+        totalHarga = jumlahHari * hargaKamera
 
         Dim konfirmasi As New InvoiceForm(kodeKamera, seriKamera, merkKamera, tanggalAwal, tanggalAkhir, totalHarga)
 
         'konfirmasi.Show()
         If konfirmasi.ShowDialog() = DialogResult.OK Then
-            MsgBox("berhasil")
+            PrintPreviewDialog1.Document = PrintDocument1
+            PrintPreviewDialog1.ShowDialog()
         End If
     End Sub
+
+    Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
+        Dim fontJudul As New Font("Arial", 14, FontStyle.Bold)
+        Dim fontIsi As New Font("Arial", 12)
+        Dim brush As New SolidBrush(Color.Black)
+
+        Dim y As Integer = 100
+
+        e.Graphics.DrawString("Bukti Penyewaan Kamera", fontJudul, brush, 100, y)
+        y += 40
+        e.Graphics.DrawString("Kode Kamera     : " & kodeKamera, fontIsi, brush, 100, y)
+        y += 25
+        e.Graphics.DrawString("Merk Kamera     : " & merkKamera, fontIsi, brush, 100, y)
+        y += 25
+        e.Graphics.DrawString("Seri Kamera     : " & seriKamera, fontIsi, brush, 100, y)
+        y += 25
+        e.Graphics.DrawString("Tanggal Pinjam  : " & tanggalAwal, fontIsi, brush, 100, y)
+        y += 25
+        e.Graphics.DrawString("Tanggal Kembali : " & tanggalAkhir, fontIsi, brush, 100, y)
+        y += 25
+        e.Graphics.DrawString("Harga per Hari  : Rp " & totalHarga, fontIsi, brush, 100, y)
+    End Sub
+
 
 End Class
