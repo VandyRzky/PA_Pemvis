@@ -46,6 +46,8 @@ Public Class HomeAdmin
         Kosong()
         aturGrid()
 
+        txtPenyewa.ReadOnly = True
+
         txtKode.MaxLength = 5
         txtMerk.MaxLength = 50
         txtSeri.MaxLength = 50

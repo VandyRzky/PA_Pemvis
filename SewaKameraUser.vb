@@ -18,7 +18,7 @@ Public Class SewaKameraUser
         txtKode.Clear()
         txtMerk.Clear()
         txtSeri.Clear()
-        txtKode.Focus()
+        txtHarga.Clear()
     End Sub
 
     Sub tampilJenis()
@@ -112,7 +112,25 @@ Public Class SewaKameraUser
         If konfirmasi.ShowDialog() = DialogResult.OK Then
             PrintPreviewDialog1.Document = PrintDocument1
             PrintPreviewDialog1.ShowDialog()
+            SewaKamera()
         End If
+    End Sub
+
+    Private Sub SewaKamera()
+        CMD = New MySqlCommand("INSERT INTO transaksitb (tanggalPinjam, tanggalKembali, totalHarga, statusSewa, kodeKamera, username) VALUES (@pinjam, @kembali, @harga, @status, @kode, @username)", CONN)
+        CMD.Parameters.AddWithValue("@pinjam", tanggalAwal)
+        CMD.Parameters.AddWithValue("@kembali", tanggalAkhir)
+        CMD.Parameters.AddWithValue("@harga", totalHarga)
+        CMD.Parameters.AddWithValue("@status", "Disewa")
+        CMD.Parameters.AddWithValue("@kode", kodeKamera)
+        CMD.Parameters.AddWithValue("@username", userLogin)
+        CMD.ExecuteNonQuery()
+        CMD = New MySqlCommand("UPDATE kameras SET username = @username WHERE kodeKamera = @kode", CONN)
+        CMD.Parameters.AddWithValue("@username", userLogin)
+        CMD.Parameters.AddWithValue("@kode", kodeKamera)
+        CMD.ExecuteNonQuery()
+        tampilJenis()
+        Kosong()
     End Sub
 
     Private Sub PrintDocument1_PrintPage(sender As Object, e As Printing.PrintPageEventArgs) Handles PrintDocument1.PrintPage
