@@ -1,20 +1,14 @@
-﻿Imports System.Text
-Imports MySql.Data.MySqlClient
+﻿Imports MySql.Data.MySqlClient
+Imports System.Text
 
-Public Class DataTransaksi
-    Private userLogin As String
-    Public Sub New(nama As String)
-        InitializeComponent()
-        userLogin = nama
-    End Sub
+Public Class DataTransaksiAdmin
     Sub tampilJenis()
         If CONN.State = ConnectionState.Closed Then
             CONN.Open()
         End If
 
-        Dim query As String = "SELECT * FROM transaksitb WHERE username = @username"
+        Dim query As String = "SELECT * FROM transaksitb"
         CMD = New MySqlCommand(query, CONN)
-        CMD.Parameters.AddWithValue("@username", userLogin)
 
 
         DA = New MySqlDataAdapter(CMD)
@@ -46,10 +40,9 @@ Public Class DataTransaksi
         If e.RowIndex >= 0 Then
             Dim row As DataGridViewRow = DataGridView1.Rows(e.RowIndex)
             Dim kode As String = row.Cells(0).Value.ToString()
-            Dim detailForm = New DetailTransaksi(kode)
-            If detailForm.ShowDialog() = DialogResult.OK Then
-                tampilJenis()
-            End If
+            Dim detailForm = New DetailTransaksiAdmin(kode)
+            detailForm.Show()
+
         End If
     End Sub
 

@@ -23,4 +23,8 @@
         Me.Close()
         Form1.Show()
     End Sub
+
+    Private Sub DataTransaksiToolStripMenuItem_Click(sender As Object, e As EventArgs) Handles DataTransaksiToolStripMenuItem.Click
+        TampilkanFormKePanel(New DataTransaksiAdmin())
+    End Sub
 End Class

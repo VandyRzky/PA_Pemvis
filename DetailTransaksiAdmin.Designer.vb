@@ -1,5 +1,5 @@
 ﻿<Global.Microsoft.VisualBasic.CompilerServices.DesignerGenerated()> _
-Partial Class DetailTransaksi
+Partial Class DetailTransaksiAdmin
     Inherits System.Windows.Forms.Form
 
     'Form overrides dispose to clean up the component list.
@@ -28,7 +28,6 @@ Partial Class DetailTransaksi
         txtSeri = New TextBox()
         txtMerk = New TextBox()
         txtKode = New TextBox()
-        btnKembali = New Button()
         Label7 = New Label()
         Label6 = New Label()
         Label5 = New Label()
@@ -40,131 +39,121 @@ Partial Class DetailTransaksi
         ' 
         ' txtHarga
         ' 
-        txtHarga.Location = New Point(191, 295)
+        txtHarga.Location = New Point(167, 315)
         txtHarga.Name = "txtHarga"
         txtHarga.Size = New Size(212, 27)
-        txtHarga.TabIndex = 27
+        txtHarga.TabIndex = 40
         ' 
         ' txtKembali
         ' 
-        txtKembali.Location = New Point(191, 247)
+        txtKembali.Location = New Point(167, 267)
         txtKembali.Name = "txtKembali"
         txtKembali.Size = New Size(212, 27)
-        txtKembali.TabIndex = 26
+        txtKembali.TabIndex = 39
         ' 
         ' txtPinjam
         ' 
-        txtPinjam.Location = New Point(191, 204)
+        txtPinjam.Location = New Point(167, 224)
         txtPinjam.Name = "txtPinjam"
         txtPinjam.Size = New Size(212, 27)
-        txtPinjam.TabIndex = 25
+        txtPinjam.TabIndex = 38
         ' 
         ' txtSeri
         ' 
-        txtSeri.Location = New Point(191, 161)
+        txtSeri.Location = New Point(167, 181)
         txtSeri.Name = "txtSeri"
         txtSeri.Size = New Size(212, 27)
-        txtSeri.TabIndex = 24
+        txtSeri.TabIndex = 37
         ' 
         ' txtMerk
         ' 
-        txtMerk.Location = New Point(191, 123)
+        txtMerk.Location = New Point(167, 143)
         txtMerk.Name = "txtMerk"
         txtMerk.Size = New Size(212, 27)
-        txtMerk.TabIndex = 23
+        txtMerk.TabIndex = 36
         ' 
         ' txtKode
         ' 
-        txtKode.Location = New Point(191, 82)
+        txtKode.Location = New Point(167, 102)
         txtKode.Name = "txtKode"
         txtKode.Size = New Size(212, 27)
-        txtKode.TabIndex = 22
-        ' 
-        ' btnKembali
-        ' 
-        btnKembali.Location = New Point(159, 360)
-        btnKembali.Name = "btnKembali"
-        btnKembali.Size = New Size(152, 45)
-        btnKembali.TabIndex = 21
-        btnKembali.Text = "Kembalikan Kamera"
-        btnKembali.UseVisualStyleBackColor = True
+        txtKode.TabIndex = 35
         ' 
         ' Label7
         ' 
         Label7.AutoSize = True
-        Label7.Location = New Point(57, 298)
+        Label7.Location = New Point(33, 318)
         Label7.Name = "Label7"
         Label7.Size = New Size(87, 20)
-        Label7.TabIndex = 20
+        Label7.TabIndex = 34
         Label7.Text = "Total Harga"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
-        Label6.Location = New Point(57, 250)
+        Label6.Location = New Point(33, 270)
         Label6.Name = "Label6"
         Label6.Size = New Size(120, 20)
-        Label6.TabIndex = 19
+        Label6.TabIndex = 33
         Label6.Text = "Tanggal Kembali"
         ' 
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(57, 207)
+        Label5.Location = New Point(33, 227)
         Label5.Name = "Label5"
         Label5.Size = New Size(110, 20)
-        Label5.TabIndex = 18
+        Label5.TabIndex = 32
         Label5.Text = "Tanggal Pinjam"
         ' 
         ' Label4
         ' 
         Label4.AutoSize = True
-        Label4.Location = New Point(57, 164)
+        Label4.Location = New Point(33, 184)
         Label4.Name = "Label4"
         Label4.Size = New Size(89, 20)
-        Label4.TabIndex = 17
+        Label4.TabIndex = 31
         Label4.Text = "Seri Kamera"
         ' 
         ' Label3
         ' 
         Label3.AutoSize = True
-        Label3.Location = New Point(56, 126)
+        Label3.Location = New Point(32, 146)
         Label3.Name = "Label3"
         Label3.Size = New Size(97, 20)
-        Label3.TabIndex = 16
+        Label3.TabIndex = 30
         Label3.Text = "Merk Kamera"
         ' 
         ' Label2
         ' 
         Label2.AutoSize = True
-        Label2.Location = New Point(57, 86)
+        Label2.Location = New Point(33, 106)
         Label2.Name = "Label2"
         Label2.Size = New Size(99, 20)
-        Label2.TabIndex = 15
+        Label2.TabIndex = 29
         Label2.Text = "Kode Kamera"
         ' 
         ' Label1
         ' 
         Label1.AutoSize = True
         Label1.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
-        Label1.Location = New Point(116, 21)
+        Label1.Location = New Point(92, 41)
         Label1.Name = "Label1"
         Label1.Size = New Size(214, 38)
-        Label1.TabIndex = 14
+        Label1.TabIndex = 28
         Label1.Text = "Detail Transaksi"
         ' 
-        ' DetailTransaksi
+        ' DetailTransaksiAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
-        ClientSize = New Size(462, 450)
+        ClientSize = New Size(407, 450)
         Controls.Add(txtHarga)
         Controls.Add(txtKembali)
         Controls.Add(txtPinjam)
         Controls.Add(txtSeri)
         Controls.Add(txtMerk)
         Controls.Add(txtKode)
-        Controls.Add(btnKembali)
         Controls.Add(Label7)
         Controls.Add(Label6)
         Controls.Add(Label5)
@@ -172,8 +161,8 @@ Partial Class DetailTransaksi
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
-        Name = "DetailTransaksi"
-        Text = "DetailTransaksi"
+        Name = "DetailTransaksiAdmin"
+        Text = "DetailTransaksiAdmin"
         ResumeLayout(False)
         PerformLayout()
     End Sub
@@ -184,7 +173,6 @@ Partial Class DetailTransaksi
     Friend WithEvents txtSeri As TextBox
     Friend WithEvents txtMerk As TextBox
     Friend WithEvents txtKode As TextBox
-    Friend WithEvents btnKembali As Button
     Friend WithEvents Label7 As Label
     Friend WithEvents Label6 As Label
     Friend WithEvents Label5 As Label
