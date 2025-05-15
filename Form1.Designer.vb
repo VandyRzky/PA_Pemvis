@@ -22,6 +22,7 @@ Partial Class Form1
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()>
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Form1))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -34,6 +35,7 @@ Partial Class Form1
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Location = New Point(187, 40)
         Label1.Name = "Label1"
         Label1.Size = New Size(46, 20)
@@ -43,6 +45,7 @@ Partial Class Form1
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Location = New Point(30, 106)
         Label2.Name = "Label2"
         Label2.Size = New Size(75, 20)
@@ -52,6 +55,7 @@ Partial Class Form1
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Location = New Point(30, 183)
         Label3.Name = "Label3"
         Label3.Size = New Size(70, 20)
@@ -61,6 +65,7 @@ Partial Class Form1
         ' lblRegistrasi
         ' 
         lblRegistrasi.AutoSize = True
+        lblRegistrasi.BackColor = Color.Transparent
         lblRegistrasi.Location = New Point(124, 316)
         lblRegistrasi.Name = "lblRegistrasi"
         lblRegistrasi.Size = New Size(162, 20)
@@ -94,6 +99,8 @@ Partial Class Form1
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(405, 378)
         Controls.Add(btnLogin)
         Controls.Add(txtPasswordLogin)
@@ -102,6 +109,7 @@ Partial Class Form1
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        DoubleBuffered = True
         Name = "Form1"
         Text = "Login"
         ResumeLayout(False)

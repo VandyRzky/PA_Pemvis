@@ -98,6 +98,7 @@ Partial Class SewaKameraUser
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Location = New Point(39, 324)
         Label1.Name = "Label1"
         Label1.Size = New Size(99, 20)
@@ -107,6 +108,7 @@ Partial Class SewaKameraUser
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Location = New Point(39, 368)
         Label2.Name = "Label2"
         Label2.Size = New Size(97, 20)
@@ -116,6 +118,7 @@ Partial Class SewaKameraUser
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Location = New Point(39, 417)
         Label3.Name = "Label3"
         Label3.Size = New Size(89, 20)
@@ -125,6 +128,7 @@ Partial Class SewaKameraUser
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
         Label4.Location = New Point(415, 324)
         Label4.Name = "Label4"
         Label4.Size = New Size(81, 20)
@@ -134,15 +138,17 @@ Partial Class SewaKameraUser
         ' Label5
         ' 
         Label5.AutoSize = True
-        Label5.Location = New Point(383, 370)
+        Label5.BackColor = Color.Transparent
+        Label5.Location = New Point(391, 370)
         Label5.Name = "Label5"
-        Label5.Size = New Size(110, 20)
+        Label5.Size = New Size(100, 20)
         Label5.TabIndex = 11
-        Label5.Text = "Tanggal Pinjam"
+        Label5.Text = "Tanggal Sewa"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
         Label6.Location = New Point(373, 417)
         Label6.Name = "Label6"
         Label6.Size = New Size(120, 20)
@@ -152,6 +158,7 @@ Partial Class SewaKameraUser
         ' Label7
         ' 
         Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
         Label7.Location = New Point(39, 33)
         Label7.Name = "Label7"
         Label7.Size = New Size(90, 20)
@@ -191,6 +198,8 @@ Partial Class SewaKameraUser
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 507)
         Controls.Add(btnSewa)
         Controls.Add(Label7)
@@ -208,6 +217,7 @@ Partial Class SewaKameraUser
         Controls.Add(txtMerk)
         Controls.Add(txtKode)
         Controls.Add(DataGridView1)
+        DoubleBuffered = True
         Name = "SewaKameraUser"
         Text = "SewaKameraUser"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()

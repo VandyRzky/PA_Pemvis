@@ -22,6 +22,7 @@ Partial Class InvoiceForm
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(InvoiceForm))
         Label1 = New Label()
         Label2 = New Label()
         Label3 = New Label()
@@ -41,6 +42,7 @@ Partial Class InvoiceForm
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 16.2F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(60, 9)
         Label1.Name = "Label1"
@@ -51,6 +53,7 @@ Partial Class InvoiceForm
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Location = New Point(24, 70)
         Label2.Name = "Label2"
         Label2.Size = New Size(99, 20)
@@ -60,6 +63,7 @@ Partial Class InvoiceForm
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Location = New Point(23, 110)
         Label3.Name = "Label3"
         Label3.Size = New Size(97, 20)
@@ -69,6 +73,7 @@ Partial Class InvoiceForm
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
         Label4.Location = New Point(24, 148)
         Label4.Name = "Label4"
         Label4.Size = New Size(89, 20)
@@ -78,15 +83,17 @@ Partial Class InvoiceForm
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
         Label5.Location = New Point(24, 191)
         Label5.Name = "Label5"
-        Label5.Size = New Size(110, 20)
+        Label5.Size = New Size(100, 20)
         Label5.TabIndex = 4
-        Label5.Text = "Tanggal Pinjam"
+        Label5.Text = "Tanggal Sewa"
         ' 
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
         Label6.Location = New Point(24, 234)
         Label6.Name = "Label6"
         Label6.Size = New Size(120, 20)
@@ -96,6 +103,7 @@ Partial Class InvoiceForm
         ' Label7
         ' 
         Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
         Label7.Location = New Point(24, 282)
         Label7.Name = "Label7"
         Label7.Size = New Size(87, 20)
@@ -157,6 +165,8 @@ Partial Class InvoiceForm
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(397, 412)
         Controls.Add(txtHarga)
         Controls.Add(txtKembali)
@@ -172,6 +182,7 @@ Partial Class InvoiceForm
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        DoubleBuffered = True
         Name = "InvoiceForm"
         Text = "Konfirmasi Transaksi"
         ResumeLayout(False)

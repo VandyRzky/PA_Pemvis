@@ -22,6 +22,7 @@ Partial Class DataTransaksiAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(DataTransaksiAdmin))
         Label1 = New Label()
         DataGridView1 = New DataGridView()
         CType(DataGridView1, ComponentModel.ISupportInitialize).BeginInit()
@@ -30,6 +31,7 @@ Partial Class DataTransaksiAdmin
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(341, 30)
         Label1.Name = "Label1"
@@ -50,9 +52,12 @@ Partial Class DataTransaksiAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(800, 450)
         Controls.Add(DataGridView1)
         Controls.Add(Label1)
+        DoubleBuffered = True
         Name = "DataTransaksiAdmin"
         Text = "DataTransaksiAdmin"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()

@@ -22,6 +22,7 @@ Partial Class HomeAdmin
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(HomeAdmin))
         DataGridView1 = New DataGridView()
         Label2 = New Label()
         Label3 = New Label()
@@ -55,6 +56,7 @@ Partial Class HomeAdmin
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Location = New Point(31, 65)
         Label2.Name = "Label2"
         Label2.Size = New Size(99, 20)
@@ -64,6 +66,7 @@ Partial Class HomeAdmin
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Location = New Point(31, 107)
         Label3.Name = "Label3"
         Label3.Size = New Size(97, 20)
@@ -73,6 +76,7 @@ Partial Class HomeAdmin
         ' Label4
         ' 
         Label4.AutoSize = True
+        Label4.BackColor = Color.Transparent
         Label4.Location = New Point(31, 149)
         Label4.Name = "Label4"
         Label4.Size = New Size(89, 20)
@@ -82,6 +86,7 @@ Partial Class HomeAdmin
         ' Label5
         ' 
         Label5.AutoSize = True
+        Label5.BackColor = Color.Transparent
         Label5.Location = New Point(31, 191)
         Label5.Name = "Label5"
         Label5.Size = New Size(66, 20)
@@ -126,6 +131,7 @@ Partial Class HomeAdmin
         ' Label6
         ' 
         Label6.AutoSize = True
+        Label6.BackColor = Color.Transparent
         Label6.Location = New Point(31, 302)
         Label6.Name = "Label6"
         Label6.Size = New Size(35, 20)
@@ -176,6 +182,7 @@ Partial Class HomeAdmin
         ' Label7
         ' 
         Label7.AutoSize = True
+        Label7.BackColor = Color.Transparent
         Label7.Location = New Point(31, 236)
         Label7.Name = "Label7"
         Label7.Size = New Size(50, 20)
@@ -185,6 +192,7 @@ Partial Class HomeAdmin
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Font = New Font("Segoe UI Semibold", 12F, FontStyle.Bold, GraphicsUnit.Point, CByte(0))
         Label1.Location = New Point(299, 9)
         Label1.Name = "Label1"
@@ -196,6 +204,8 @@ Partial Class HomeAdmin
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(771, 550)
         Controls.Add(Label1)
         Controls.Add(txtHarga)
@@ -215,6 +225,7 @@ Partial Class HomeAdmin
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(DataGridView1)
+        DoubleBuffered = True
         Name = "HomeAdmin"
         Text = "HomeAdmin"
         CType(DataGridView1, ComponentModel.ISupportInitialize).EndInit()

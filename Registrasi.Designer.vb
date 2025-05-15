@@ -22,6 +22,7 @@ Partial Class Registrasi
     'Do not modify it using the code editor.
     <System.Diagnostics.DebuggerStepThrough()> _
     Private Sub InitializeComponent()
+        Dim resources As System.ComponentModel.ComponentResourceManager = New System.ComponentModel.ComponentResourceManager(GetType(Registrasi))
         btnRegistrasi = New Button()
         txtPasswordRegis = New TextBox()
         txtUsernameRegis = New TextBox()
@@ -57,6 +58,7 @@ Partial Class Registrasi
         ' lblLogin
         ' 
         lblLogin.AutoSize = True
+        lblLogin.BackColor = Color.Transparent
         lblLogin.Location = New Point(113, 327)
         lblLogin.Name = "lblLogin"
         lblLogin.Size = New Size(170, 20)
@@ -66,6 +68,7 @@ Partial Class Registrasi
         ' Label3
         ' 
         Label3.AutoSize = True
+        Label3.BackColor = Color.Transparent
         Label3.Location = New Point(24, 194)
         Label3.Name = "Label3"
         Label3.Size = New Size(70, 20)
@@ -75,6 +78,7 @@ Partial Class Registrasi
         ' Label2
         ' 
         Label2.AutoSize = True
+        Label2.BackColor = Color.Transparent
         Label2.Location = New Point(24, 117)
         Label2.Name = "Label2"
         Label2.Size = New Size(75, 20)
@@ -84,6 +88,7 @@ Partial Class Registrasi
         ' Label1
         ' 
         Label1.AutoSize = True
+        Label1.BackColor = Color.Transparent
         Label1.Location = New Point(181, 51)
         Label1.Name = "Label1"
         Label1.Size = New Size(73, 20)
@@ -94,6 +99,8 @@ Partial Class Registrasi
         ' 
         AutoScaleDimensions = New SizeF(8F, 20F)
         AutoScaleMode = AutoScaleMode.Font
+        BackgroundImage = CType(resources.GetObject("$this.BackgroundImage"), Image)
+        BackgroundImageLayout = ImageLayout.Stretch
         ClientSize = New Size(389, 393)
         Controls.Add(btnRegistrasi)
         Controls.Add(txtPasswordRegis)
@@ -102,6 +109,7 @@ Partial Class Registrasi
         Controls.Add(Label3)
         Controls.Add(Label2)
         Controls.Add(Label1)
+        DoubleBuffered = True
         Name = "Registrasi"
         Text = "Registrasi"
         ResumeLayout(False)

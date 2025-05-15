@@ -28,3 +28,4 @@ D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.DetailTransaksi.resources
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.DataTransaksiAdmin.resources
 D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.DetailTransaksiAdmin.resources
+D:\Kuliah\Semester 4\Pemrograman Visual\Praktikum\PA\PA_Pemvis\obj\Debug\net8.0-windows\PA_Pemvis.Resources.resources
