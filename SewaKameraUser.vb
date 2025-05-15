@@ -1,4 +1,5 @@
-﻿Imports System.Text
+﻿Imports System.Drawing.Printing
+Imports System.Text
 Imports MySql.Data.MySqlClient
 
 Public Class SewaKameraUser
@@ -109,6 +110,14 @@ Public Class SewaKameraUser
 
         'konfirmasi.Show()
         If konfirmasi.ShowDialog() = DialogResult.OK Then
+            Dim ukuranStruk As New PaperSize("Struk", 300, 600) ' lebar 3 inch, tinggi 6 inch
+            Dim marginKiri As Integer = 10
+            Dim marginKanan As Integer = 10
+            Dim marginAtas As Integer = 10
+            Dim marginBawah As Integer = 10
+
+            PrintDocument1.DefaultPageSettings.PaperSize = ukuranStruk
+            PrintDocument1.DefaultPageSettings.Margins = New Margins(marginKiri, marginKanan, marginAtas, marginBawah)
             PrintPreviewDialog1.Document = PrintDocument1
             PrintPreviewDialog1.ShowDialog()
             SewaKamera()
@@ -137,21 +146,28 @@ Public Class SewaKameraUser
         Dim fontIsi As New Font("Arial", 12)
         Dim brush As New SolidBrush(Color.Black)
 
-        Dim y As Integer = 100
+        Dim x As Integer = e.MarginBounds.Left
+        Dim y As Integer = e.MarginBounds.Top
 
-        e.Graphics.DrawString("Bukti Penyewaan Kamera", fontJudul, brush, 100, y)
+
+        e.Graphics.DrawString("Bukti Penyewaan Kamera", fontJudul, brush, x, y)
         y += 40
-        e.Graphics.DrawString("Kode Kamera     : " & kodeKamera, fontIsi, brush, 100, y)
+
+        e.Graphics.DrawString("Kode Kamera     : " & kodeKamera, fontIsi, brush, x, y)
         y += 25
-        e.Graphics.DrawString("Merk Kamera     : " & merkKamera, fontIsi, brush, 100, y)
+        e.Graphics.DrawString("Merk Kamera     : " & merkKamera, fontIsi, brush, x, y)
         y += 25
-        e.Graphics.DrawString("Seri Kamera     : " & seriKamera, fontIsi, brush, 100, y)
+        e.Graphics.DrawString("Seri Kamera     : " & seriKamera, fontIsi, brush, x, y)
         y += 25
-        e.Graphics.DrawString("Tanggal Pinjam  : " & tanggalAwal, fontIsi, brush, 100, y)
+
+
+        e.Graphics.DrawString("Tanggal Pinjam  : " & tanggalAwal.ToShortDateString(), fontIsi, brush, x, y)
         y += 25
-        e.Graphics.DrawString("Tanggal Kembali : " & tanggalAkhir, fontIsi, brush, 100, y)
+        e.Graphics.DrawString("Tanggal Kembali : " & tanggalAkhir.ToShortDateString(), fontIsi, brush, x, y)
         y += 25
-        e.Graphics.DrawString("Harga per Hari  : Rp " & totalHarga, fontIsi, brush, 100, y)
+
+        e.Graphics.DrawString("Harga per Hari  : Rp " & totalHarga.ToString("N0"), fontIsi, brush, x, y)
     End Sub
+
 
 End Class
